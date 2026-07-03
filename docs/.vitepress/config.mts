@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const fundamentals = [
   ['Java 基础与集合', '基础模块1-Java基础与集合-标准答案库'],
@@ -56,13 +57,21 @@ const jvmConcurrencyDeepDives = [
   { text: '案例：Full GC 与 TP99', link: '/deep-dives/jvm-concurrency/case-full-gc-latency' }
 ]
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: '面试知识库',
   description: '面向高级后端、架构师与 AI 架构师的系统化面试资料',
   base: process.env.BASE_PATH || '/',
   cleanUrls: true,
   lastUpdated: true,
+  mermaid: {
+    theme: 'neutral',
+    securityLevel: 'strict',
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis'
+    }
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${process.env.BASE_PATH || '/'}favicon.svg` }],
     ['meta', { name: 'theme-color', content: '#0b7a65' }],
@@ -123,4 +132,4 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     mobileMenuLabel: '菜单'
   }
-})
+}))
