@@ -26,6 +26,10 @@ features:
     details: LLM、RAG、Agent、服务化、安全治理、评测与业务 ROI。
     link: /ai/
     linkText: 学习 AI 架构
+  - title: 深度精选
+    details: 用机制图、代码、教学案例、指标口径和 25 分评分，经得住连续追问。
+    link: /deep-dives/
+    linkText: 进入深度学习
   - title: 高频复习
     details: 总索引、知识脑图与抽认卡，适合冲刺、查漏和模拟面试。
     link: /guides/

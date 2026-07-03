@@ -45,6 +45,17 @@ const guides = [
   { text: '面试笔记示例', link: '/examples/面试笔记示例' }
 ]
 
+const jvmConcurrencyDeepDives = [
+  { text: '模块入口', link: '/deep-dives/jvm-concurrency/' },
+  { text: 'GC 选型与调优', link: '/deep-dives/jvm-concurrency/01-gc-selection-and-tuning' },
+  { text: '内存泄漏证据链', link: '/deep-dives/jvm-concurrency/02-memory-leak-diagnosis' },
+  { text: '线程池容量模型', link: '/deep-dives/jvm-concurrency/03-thread-pool-sizing' },
+  { text: '锁竞争定位与改造', link: '/deep-dives/jvm-concurrency/04-lock-contention' },
+  { text: 'JMM 与可见性', link: '/deep-dives/jvm-concurrency/05-jmm-and-visibility' },
+  { text: 'CPU 飙高排查', link: '/deep-dives/jvm-concurrency/06-high-cpu-diagnosis' },
+  { text: '案例：Full GC 与 TP99', link: '/deep-dives/jvm-concurrency/case-full-gc-latency' }
+]
+
 export default defineConfig({
   lang: 'zh-CN',
   title: '面试知识库',
@@ -64,9 +75,21 @@ export default defineConfig({
       { text: '基础知识', link: '/fundamentals/' },
       { text: '架构设计', link: '/architecture/' },
       { text: 'AI 架构', link: '/ai/' },
+      { text: '深度精选', link: '/deep-dives/' },
       { text: '高频专题', link: '/guides/' }
     ],
     sidebar: {
+      '/deep-dives/': [
+        {
+          text: '深度精选',
+          items: [{ text: '总入口', link: '/deep-dives/' }]
+        },
+        {
+          text: 'JVM 与并发',
+          collapsed: false,
+          items: jvmConcurrencyDeepDives
+        }
+      ],
       '/fundamentals/': [{ text: '基础知识', items: [{ text: '学习入口', link: '/fundamentals/' }, ...fundamentals] }],
       '/architecture/': [{ text: '架构设计', items: [{ text: '学习入口', link: '/architecture/' }, ...architecture] }],
       '/ai/': [{ text: 'AI 架构', items: [{ text: '学习入口', link: '/ai/' }, ...ai] }],

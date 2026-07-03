@@ -73,6 +73,46 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.vp-doc table {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  white-space: normal;
+}
+
+.vp-doc > blockquote:first-of-type {
+  border-radius: 8px;
+  font-size: 0.94em;
+}
+
+.vp-doc h2 + table {
+  margin-top: 1rem;
+}
+
+.vp-doc table th {
+  white-space: nowrap;
+}
+
+.vp-doc table td {
+  min-width: 7.5rem;
+  vertical-align: top;
+}
+
+.vp-doc .mermaid {
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+}
+
+@media print {
+  .vp-doc .mermaid,
+  .vp-doc div[class*="language-"] {
+    overflow: visible;
+    break-inside: avoid;
+  }
+}
+
 .VPHome .VPHero {
   position: relative;
   overflow: hidden;
