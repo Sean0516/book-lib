@@ -64,6 +64,7 @@ export default withMermaid(defineConfig({
   base: process.env.BASE_PATH || '/',
   cleanUrls: true,
   lastUpdated: true,
+  srcExclude: ['superpowers/**/*.md'],
   mermaid: {
     theme: 'neutral',
     securityLevel: 'strict',
