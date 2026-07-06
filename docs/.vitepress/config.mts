@@ -57,6 +57,48 @@ const jvmConcurrencyDeepDives = [
   { text: '案例：Full GC 与 TP99', link: '/deep-dives/jvm-concurrency/case-full-gc-latency' }
 ]
 
+const caseGroups = [
+  {
+    text: 'JVM 完整案例',
+    items: [
+      ['模块入口', 'jvm/'], ['CPU 持续 100%', 'jvm/high-cpu-incident'],
+      ['线程池耗尽', 'jvm/thread-pool-exhaustion'], ['低延迟 Java 服务', 'jvm/low-latency-java-service']
+    ]
+  },
+  {
+    text: '数据库完整案例',
+    items: [
+      ['模块入口', 'database/'], ['慢 SQL 超时', 'database/slow-sql-timeout'],
+      ['死锁与锁等待', 'database/deadlock-and-lock-wait'], ['订单存储设计', 'database/high-concurrency-order-storage']
+    ]
+  },
+  {
+    text: 'Redis 完整案例',
+    items: [
+      ['模块入口', 'redis/'], ['热 Key 过载', 'redis/hot-key-overload'],
+      ['击穿与不一致', 'redis/cache-breakdown-and-inconsistency'], ['高可用缓存', 'redis/highly-available-cache']
+    ]
+  },
+  {
+    text: '消息队列完整案例',
+    items: [
+      ['模块入口', 'messaging/'], ['消息积压', 'messaging/message-backlog'],
+      ['重复、丢失与乱序', 'messaging/duplicate-loss-and-disorder'], ['事件驱动架构', 'messaging/reliable-event-driven-architecture']
+    ]
+  },
+  {
+    text: '系统设计完整案例',
+    items: [
+      ['模块入口', 'system-design/'], ['秒杀击穿', 'system-design/flash-sale-overload'],
+      ['级联雪崩', 'system-design/cascading-failure'], ['高并发订单系统', 'system-design/high-concurrency-order-system']
+    ]
+  }
+].map(group => ({
+  text: group.text,
+  collapsed: true,
+  items: group.items.map(([text, path]) => ({ text, link: `/deep-dives/cases/${path}` }))
+}))
+
 export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: '面试知识库',
@@ -98,7 +140,9 @@ export default withMermaid(defineConfig({
           text: 'JVM 与并发',
           collapsed: false,
           items: jvmConcurrencyDeepDives
-        }
+        },
+        { text: '完整案例库', items: [{ text: '案例总入口', link: '/deep-dives/cases/' }] },
+        ...caseGroups
       ],
       '/fundamentals/': [{ text: '基础知识', items: [{ text: '学习入口', link: '/fundamentals/' }, ...fundamentals] }],
       '/architecture/': [{ text: '架构设计', items: [{ text: '学习入口', link: '/architecture/' }, ...architecture] }],
