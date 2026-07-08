@@ -13,6 +13,28 @@ outline: deep
 > 所有案例均基于常见生产模式构造，不对应任何实际企业或未公开事故。数字仅服务于同一
 > 教学场景，重点是建立可验证的证据链。
 
+
+
+## 题库到案例速查
+
+刷题时如果只停留在“标准答案”，很容易回答得像背书。建议用下面这张表把题库问题切到案例推演：先回答知识点，再进入对应案例，把现象、证据、决策和复盘讲完整。
+
+| 题库问题 | 推荐案例 | 训练价值 |
+| --- | --- | --- |
+| JVM Full GC、内存泄漏、GC 调优怎么排查？ | [Full GC 导致接口延迟飙升](../jvm-concurrency/case-full-gc-latency)、[低延迟 Java 服务设计](./jvm/low-latency-java-service) | 把 GC 参数、对象生命周期、容量水位和延迟目标串起来 |
+| Java 线程池参数怎么设置？线程池打满怎么办？ | [线程池耗尽导致下单超时](./jvm/thread-pool-exhaustion) | 从队列、拒绝策略、下游慢调用和隔离治理推演 |
+| CPU 飙高如何定位？锁竞争怎么判断？ | [Java 服务 CPU 100% 事故](./jvm/high-cpu-incident) | 训练 top、线程栈、火焰图、锁热点之间的证据链 |
+| 慢 SQL 怎么优化？索引如何设计？ | [慢 SQL 导致核心接口超时](./database/slow-sql-timeout) | 从执行计划、回表、分页、排序和业务读模型推导优化 |
+| 数据库死锁、锁等待怎么处理？ | [库存扣减死锁与锁等待](./database/deadlock-and-lock-wait) | 训练事务边界、加锁顺序、隔离级别和止血方案 |
+| 高并发订单表怎么设计？ | [高并发订单存储设计](./database/high-concurrency-order-storage) | 把分库分表、唯一约束、幂等、归档和查询路径串起来 |
+| Redis 热 Key、大 Key、缓存击穿怎么治理？ | [Redis 热 Key 导致延迟飙升](./redis/hot-key-overload)、[缓存击穿与不一致](./redis/cache-breakdown-and-inconsistency) | 从热点发现、限流、本地缓存、互斥重建和一致性取舍推演 |
+| Redis 高可用缓存体系怎么设计？ | [高可用缓存体系设计](./redis/highly-available-cache) | 训练多级缓存、降级、预热、监控和故障模式 |
+| MQ 消息积压怎么办？如何保证可靠投递？ | [消息积压导致履约延迟](./messaging/message-backlog)、[重复、丢失与乱序治理](./messaging/duplicate-loss-and-disorder) | 从生产速率、消费能力、重试、幂等和顺序性推演 |
+| 事件驱动架构怎么设计？ | [可靠事件驱动架构设计](./messaging/reliable-event-driven-architecture) | 把 outbox、事务边界、补偿、可观测性和重放能力讲清楚 |
+| 秒杀系统、高并发订单系统怎么设计？ | [秒杀流量打穿核心链路](./system-design/flash-sale-overload)、[高并发订单系统设计](./system-design/high-concurrency-order-system) | 从容量估算、削峰、库存一致性、熔断和限流形成完整方案 |
+| 级联故障、雪崩如何治理？ | [下游故障引发级联雪崩](./system-design/cascading-failure) | 训练超时、重试、熔断、隔离、降级和恢复策略 |
+
+
 ## 案例地图
 
 | 模块 | 故障案例 | 架构案例 | 建议顺序 |

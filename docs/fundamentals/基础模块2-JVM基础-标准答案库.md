@@ -1,5 +1,10 @@
 # 基础模块2 - JVM基础 - 标准答案库
 
+
+::: tip 配套案例训练
+建议搭配 [JVM 完整案例库](../deep-dives/cases/jvm/) 和 [Full GC 导致接口延迟飙升](../deep-dives/jvm-concurrency/case-full-gc-latency) 一起练。题库负责帮你建立术语和原理，案例负责训练线上排查、止血和复盘表达。
+:::
+
 ## 1. JVM 运行时数据区有哪些？
 
 **核心结论**\
