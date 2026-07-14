@@ -12,4 +12,8 @@
 
 ## 推荐顺序
 
+需要从题库广度进入生产级推演时，先学习
+[AI 架构深度专题](/deep-dives/ai-architecture/)，再通过
+[AI 架构完整案例](/deep-dives/cases/ai/)复述事故与方案。
+
 `模型选型 → RAG → Agent → 服务化 → 安全治理 → 评测与 ROI`

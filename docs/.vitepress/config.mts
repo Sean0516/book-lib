@@ -54,7 +54,61 @@ const jvmConcurrencyDeepDives = [
   { text: '锁竞争定位与改造', link: '/deep-dives/jvm-concurrency/04-lock-contention' },
   { text: 'JMM 与可见性', link: '/deep-dives/jvm-concurrency/05-jmm-and-visibility' },
   { text: 'CPU 飙高排查', link: '/deep-dives/jvm-concurrency/06-high-cpu-diagnosis' },
+  { text: 'Java 虚拟线程', link: '/deep-dives/jvm-concurrency/07-virtual-threads' },
   { text: '案例：Full GC 与 TP99', link: '/deep-dives/jvm-concurrency/case-full-gc-latency' }
+]
+
+const dataReliabilityDeepDives = [
+  { text: '模块入口', link: '/deep-dives/data-reliability/' },
+  { text: '数据库证据链', link: '/deep-dives/data-reliability/01-database-evidence-chain' },
+  { text: '缓存一致性与热点', link: '/deep-dives/data-reliability/02-cache-consistency-and-hotspots' },
+  { text: '消息可靠性与积压', link: '/deep-dives/data-reliability/03-messaging-reliability' }
+]
+
+const distributedStabilityDeepDives = [
+  { text: '模块入口', link: '/deep-dives/distributed-stability/' },
+  { text: '分布式一致性选择树', link: '/deep-dives/distributed-stability/01-distributed-consistency' },
+  { text: '流量保护与级联故障', link: '/deep-dives/distributed-stability/02-traffic-protection' },
+  { text: 'SLO、演练与事故闭环', link: '/deep-dives/distributed-stability/03-slo-incident-loop' }
+]
+
+const capacityPerformanceDeepDives = [
+  { text: '模块入口', link: '/deep-dives/capacity-performance/' },
+  { text: '容量模型与安全水位', link: '/deep-dives/capacity-performance/01-capacity-model' },
+  { text: '真实性压测与瓶颈', link: '/deep-dives/capacity-performance/02-realistic-load-testing' },
+  { text: '尾延迟与性能回归', link: '/deep-dives/capacity-performance/03-tail-latency-regression' }
+]
+
+const aiArchitectureDeepDives = [
+  { text: '模块入口', link: '/deep-dives/ai-architecture/' },
+  { text: 'RAG 质量闭环', link: '/deep-dives/ai-architecture/01-rag-quality-loop' },
+  { text: 'Agent 生产化与安全', link: '/deep-dives/ai-architecture/02-agent-production-safety' },
+  { text: '模型路由、SLA 与成本', link: '/deep-dives/ai-architecture/03-model-routing-cost' },
+  { text: 'AI 评测与发布门禁', link: '/deep-dives/ai-architecture/04-evaluation-release-gates' }
+]
+
+const cloudGovernanceDeepDives = [
+  { text: '模块入口', link: '/deep-dives/cloud-governance/' },
+  { text: 'Kubernetes 可靠性边界', link: '/deep-dives/cloud-governance/01-kubernetes-reliability' },
+  { text: '渐进式交付与多集群', link: '/deep-dives/cloud-governance/02-progressive-delivery' },
+  { text: '平台工程与黄金路径', link: '/deep-dives/cloud-governance/03-platform-engineering' },
+  { text: 'ADR、技术债与架构守护', link: '/deep-dives/cloud-governance/04-architecture-governance' }
+]
+
+const businessEvolutionDeepDives = [
+  { text: '模块入口', link: '/deep-dives/business-evolution/' },
+  { text: '领域发现与限界上下文', link: '/deep-dives/business-evolution/01-domain-discovery' },
+  { text: '聚合、不变量与领域事件', link: '/deep-dives/business-evolution/02-aggregate-invariants' },
+  { text: '单体渐进迁移', link: '/deep-dives/business-evolution/03-strangler-migration' },
+  { text: '遗留系统与模型腐化', link: '/deep-dives/business-evolution/04-legacy-modernization' }
+]
+
+const securityComplianceDeepDives = [
+  { text: '模块入口', link: '/deep-dives/security-compliance/' },
+  { text: '身份、授权与租户隔离', link: '/deep-dives/security-compliance/01-identity-authorization' },
+  { text: '数据保护与生命周期', link: '/deep-dives/security-compliance/02-data-lifecycle' },
+  { text: '供应链安全与威胁建模', link: '/deep-dives/security-compliance/03-supply-chain-threat-modeling' },
+  { text: '安全响应与 AI 边界', link: '/deep-dives/security-compliance/04-security-incident-ai' }
 ]
 
 const caseGroups = [
@@ -92,6 +146,34 @@ const caseGroups = [
       ['模块入口', 'system-design/'], ['秒杀击穿', 'system-design/flash-sale-overload'],
       ['级联雪崩', 'system-design/cascading-failure'], ['高并发订单系统', 'system-design/high-concurrency-order-system']
     ]
+  },
+  {
+    text: 'AI 架构完整案例',
+    items: [
+      ['模块入口', 'ai/'], ['RAG 质量回退', 'ai/rag-quality-regression'],
+      ['Agent 重复退款', 'ai/agent-duplicate-refund'], ['模型供应商故障', 'ai/model-provider-outage']
+    ]
+  },
+  {
+    text: '云原生与治理案例',
+    items: [
+      ['模块入口', 'cloud/'], ['探针重启风暴', 'cloud/probe-restart-storm'],
+      ['数据库发布失败', 'cloud/incompatible-database-release'], ['平台采用陷阱', 'cloud/platform-adoption-trap']
+    ]
+  },
+  {
+    text: '业务建模与演进案例',
+    items: [
+      ['模块入口', 'business/'], ['跨域共享模型', 'business/shared-model-coupling'],
+      ['超大聚合热点', 'business/oversized-aggregate-hotspot'], ['单体双写分叉', 'business/monolith-dual-write-divergence']
+    ]
+  },
+  {
+    text: '安全与合规案例',
+    items: [
+      ['模块入口', 'security/'], ['跨租户越权', 'security/cross-tenant-idor'],
+      ['构建密钥泄露', 'security/build-secret-compromise'], ['AI 数据外发', 'security/rag-agent-exfiltration']
+    ]
   }
 ].map(group => ({
   text: group.text,
@@ -117,7 +199,7 @@ export default withMermaid(defineConfig({
   },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${process.env.BASE_PATH || '/'}favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#0b7a65' }],
+    ['meta', { name: 'theme-color', content: '#d64b27' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }]
   ],
   themeConfig: {
@@ -128,6 +210,7 @@ export default withMermaid(defineConfig({
       { text: '架构设计', link: '/architecture/' },
       { text: 'AI 架构', link: '/ai/' },
       { text: '深度精选', link: '/deep-dives/' },
+      { text: '训练台', link: '/training/' },
       { text: '高频专题', link: '/guides/' }
     ],
     sidebar: {
@@ -141,6 +224,41 @@ export default withMermaid(defineConfig({
           collapsed: false,
           items: jvmConcurrencyDeepDives
         },
+        {
+          text: '数据与消息可靠性',
+          collapsed: false,
+          items: dataReliabilityDeepDives
+        },
+        {
+          text: '分布式与稳定性',
+          collapsed: false,
+          items: distributedStabilityDeepDives
+        },
+        {
+          text: '容量规划与性能',
+          collapsed: false,
+          items: capacityPerformanceDeepDives
+        },
+        {
+          text: 'AI 架构深度专题',
+          collapsed: false,
+          items: aiArchitectureDeepDives
+        },
+        {
+          text: '云原生与架构治理',
+          collapsed: false,
+          items: cloudGovernanceDeepDives
+        },
+        {
+          text: '业务建模与系统演进',
+          collapsed: false,
+          items: businessEvolutionDeepDives
+        },
+        {
+          text: '安全与合规工程',
+          collapsed: false,
+          items: securityComplianceDeepDives
+        },
         { text: '完整案例库', items: [{ text: '案例总入口', link: '/deep-dives/cases/' }] },
         ...caseGroups
       ],
@@ -148,7 +266,8 @@ export default withMermaid(defineConfig({
       '/architecture/': [{ text: '架构设计', items: [{ text: '学习入口', link: '/architecture/' }, ...architecture] }],
       '/ai/': [{ text: 'AI 架构', items: [{ text: '学习入口', link: '/ai/' }, ...ai] }],
       '/guides/': [{ text: '高频专题', items: guides }],
-      '/examples/': [{ text: '示例', items: guides }]
+      '/examples/': [{ text: '示例', items: guides }],
+      '/training/': [{ text: '面试训练台', items: [{ text: '学习驾驶舱', link: '/training/' }] }]
     },
     search: {
       provider: 'local',

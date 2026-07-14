@@ -177,6 +177,16 @@ ALGORITHM=INPLACE, LOCK=NONE;
 | 可运维性 | 在线变更、灰度、回滚明确 |
 | 表达 | 从现象到最低风险修复 |
 
+## 复述任务
+
+不看正文，用 90 秒完成以下复述：
+
+1. 为什么流量只增加 6%，TP99 却从 260 ms 升到 5.1 s？
+2. 为什么当前先做索引和分页，而不是直接分库分表？
+3. 在线建索引的三个回滚信号是什么？
+
+答不完整时回到[数据库证据链](/deep-dives/data-reliability/01-database-evidence-chain#evidence-chain)，按“观察—假设—实验—灰度—验收”重答。
+
 ## 延伸学习
 
 [死锁案例](./deadlock-and-lock-wait) · [订单存储设计](./high-concurrency-order-storage) ·

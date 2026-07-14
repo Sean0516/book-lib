@@ -166,6 +166,15 @@ CREATE TABLE orders (
 | 可运维性 | 迁移、对账、灾备完整 |
 | 表达 | 需求到演进路径清晰 |
 
+## 复述任务
+
+1. 从日订单量、峰值系数和写放大推导数据库峰值写入，不使用日均值代替峰值。
+2. 说明热点用户、复制、CDC 和单节点故障怎样改变物理集群安全水位。
+3. 设计包含生产数据规模、热点分布和迁移影子读的容量验收方案。
+
+答不完整时回到[容量模型与安全水位](/deep-dives/capacity-performance/01-capacity-model)和
+[真实性压测与瓶颈证据](/deep-dives/capacity-performance/02-realistic-load-testing)重练。
+
 ## 延伸学习
 
 [慢 SQL 案例](./slow-sql-timeout) · [死锁案例](./deadlock-and-lock-wait) ·

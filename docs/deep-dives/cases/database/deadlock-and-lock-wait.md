@@ -181,6 +181,16 @@ COMMIT;
 | 可运维性 | 有热点压测和对账 |
 | 表达 | 锁序与事务边界讲清楚 |
 
+## 复述任务
+
+不看正文，用 90 秒完成以下复述：
+
+1. 如何从死锁日志恢复两个事务的加锁顺序？
+2. 统一顺序、缩短事务和增加重试分别解决什么问题？
+3. 为什么重试不能替代死锁根因修复？
+
+答不完整时回到[MVCC、日志与锁](/deep-dives/data-reliability/01-database-evidence-chain#mvcc-logs-locks)，补齐锁范围、失败语义和验证指标。
+
 ## 延伸学习
 
 [慢 SQL 案例](./slow-sql-timeout) · [订单存储设计](./high-concurrency-order-storage) ·

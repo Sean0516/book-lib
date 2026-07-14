@@ -132,5 +132,15 @@ SELECT sku_id, available, reserved, sold FROM inventory WHERE sku_id=8848 FOR UP
 | 取舍 | 解释限流、排队、预扣的代价 |
 | 可运维性 | 有止损、恢复、对账和演练 |
 | 表达 | 先影响与约束，再方案 |
+
+## 复述任务
+
+1. 用容量数据说明为什么入口必须先做准入控制。
+2. 定义库存不变量，并说明 Redis 预扣、订单失败和重复提交如何收敛。
+3. 说明恢复时为什么先对账、再限速放流，以及什么条件下立即回退。
+
+一致性部分参考[分布式一致性选择树](/deep-dives/distributed-stability/01-distributed-consistency)，
+流量部分参考[流量保护与级联故障](/deep-dives/distributed-stability/02-traffic-protection)。
+
 ## 延伸学习
 [级联雪崩](./cascading-failure) · [订单系统](./high-concurrency-order-system) · [返回](./)

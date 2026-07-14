@@ -186,6 +186,16 @@ physical TTL = logical TTL + random(5m, 10m)
 | 可运维性 | 回源保护、重放、对账 |
 | 表达 | 两条根因线清晰 |
 
+## 复述任务
+
+不看正文，用 90 秒完成以下复述：
+
+1. 哪个时间窗口允许旧值被重新写回缓存？
+2. 请求合并、逻辑过期和数据库限流如何配合，而不是互相替代？
+3. 如何证明删除失败最终被补偿，并控制最大陈旧时间？
+
+答不完整时回到[缓存一致性与热点](/deep-dives/data-reliability/02-cache-consistency-and-hotspots#cache-aside)，先声明事实源和一致性契约。
+
 ## 延伸学习
 
 [热 Key 案例](./hot-key-overload) · [高可用缓存设计](./highly-available-cache) ·

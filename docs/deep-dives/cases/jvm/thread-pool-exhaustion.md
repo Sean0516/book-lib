@@ -185,6 +185,15 @@ client.call(timeout(min(remaining, Duration.ofMillis(250))));
 | 可运维性 | 有 bulkhead、deadline、演练 |
 | 表达 | 先影响，再止血、根因、验证 |
 
+## 复述任务
+
+1. 用 `L = λ × W` 计算 900 QPS、3 秒等待和 2.4 倍调用放大对应的在途量。
+2. 区分线程池、连接池、队列和下游容量，解释为什么增加到 3,000 个线程可能更危险。
+3. 设计慢依赖压测，证明超时任务已取消、调用放大受控且 TP99 恢复。
+
+计算框架参考[容量模型与安全水位](/deep-dives/capacity-performance/01-capacity-model)，取证方法参考
+[真实性压测与瓶颈证据](/deep-dives/capacity-performance/02-realistic-load-testing)。
+
 ## 延伸学习
 
 [线程池容量模型](../../jvm-concurrency/03-thread-pool-sizing) ·

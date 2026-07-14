@@ -153,5 +153,15 @@ COMMIT;
 | 可运维性 | 重放、隔离、审计 |
 | 表达 | 业务效果可证明 |
 
+## 复述任务
+
+不看正文，用 90 秒完成以下复述：
+
+1. 消息在哪四个端到端阶段可能发生逻辑丢失？
+2. 为什么同一业务 Key 进入同一分区后仍需要版本状态机？
+3. 重放历史消息前，怎样保证不会重复产生业务副作用？
+
+答不完整时回到[消息可靠性专题](/deep-dives/data-reliability/03-messaging-reliability#loss)，按生产、Broker、消费、业务结果四段重答。
+
 ## 延伸学习
 [积压案例](./message-backlog) · [事件架构](./reliable-event-driven-architecture) · [返回](./)
