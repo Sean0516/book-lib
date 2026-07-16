@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "audit": "node scripts/content-audit.mjs",
+    "quality": "npm run build && npm run audit"
   },
   "devDependencies": {
     "mermaid": "^11.16.0",

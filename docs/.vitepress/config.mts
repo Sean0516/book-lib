@@ -197,9 +197,29 @@ export default withMermaid(defineConfig({
       curve: 'basis'
     }
   },
+  vite: {
+    build: {
+      // Search data and rarely used Mermaid renderers are lazy chunks. Keep the
+      // warning focused on the initial app bundle, which is audited separately.
+      chunkSizeWarningLimit: 2700,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('/node_modules/elkjs/')) return 'diagram-elk'
+            if (id.includes('/node_modules/cytoscape/')) return 'diagram-cytoscape'
+            if (id.includes('/node_modules/dagre-')) return 'diagram-dagre'
+            if (
+              id.includes('/node_modules/mermaid/') ||
+              id.includes('/node_modules/@mermaid-js/')
+            ) return 'diagram-mermaid'
+          }
+        }
+      }
+    }
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${process.env.BASE_PATH || '/'}favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#d64b27' }],
+    ['meta', { name: 'theme-color', content: '#2357e6' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }]
   ],
   themeConfig: {
@@ -221,42 +241,42 @@ export default withMermaid(defineConfig({
         },
         {
           text: 'JVM 与并发',
-          collapsed: false,
+          collapsed: true,
           items: jvmConcurrencyDeepDives
         },
         {
           text: '数据与消息可靠性',
-          collapsed: false,
+          collapsed: true,
           items: dataReliabilityDeepDives
         },
         {
           text: '分布式与稳定性',
-          collapsed: false,
+          collapsed: true,
           items: distributedStabilityDeepDives
         },
         {
           text: '容量规划与性能',
-          collapsed: false,
+          collapsed: true,
           items: capacityPerformanceDeepDives
         },
         {
           text: 'AI 架构深度专题',
-          collapsed: false,
+          collapsed: true,
           items: aiArchitectureDeepDives
         },
         {
           text: '云原生与架构治理',
-          collapsed: false,
+          collapsed: true,
           items: cloudGovernanceDeepDives
         },
         {
           text: '业务建模与系统演进',
-          collapsed: false,
+          collapsed: true,
           items: businessEvolutionDeepDives
         },
         {
           text: '安全与合规工程',
-          collapsed: false,
+          collapsed: true,
           items: securityComplianceDeepDives
         },
         { text: '完整案例库', items: [{ text: '案例总入口', link: '/deep-dives/cases/' }] },

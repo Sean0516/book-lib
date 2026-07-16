@@ -216,6 +216,11 @@ OrderView loadOrder(String orderId) throws Exception {
 - 用 JDK 21 的 pinning 结论回答所有后续 JDK。
 - 只比较吞吐，不看 TP99、下游错误和内存。
 
+## 复述任务
+
+不看正文回答：一个阻塞 IO 服务迁移虚拟线程前，你如何计算收益、限制连接与下游并发、识别
+pinning，并设计与平台线程方案的 A/B 灰度和回退？
+
 ## 延伸学习
 
 [线程池容量模型](./03-thread-pool-sizing) · [锁竞争定位](./04-lock-contention) ·

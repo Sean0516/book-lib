@@ -131,5 +131,10 @@ jcmd "$PID" JFR.start name=cpu settings=profile duration=2m filename=/tmp/cpu.jf
 
 总分 25：`22–25` 证据化排障完整，`17–21` 需补工具边界，`≤16` 需按决策树重答。
 
+## 复述任务
+
+不看正文回答：容器 CPU 95%、流量不变、单次线程 dump 没有热点时，下一轮如何从配额、GC、
+多次线程采样和 profiler 逐层取证，同时保留可回滚的止血路径？
+
 [返回模块](./) · [GC 选型](./01-gc-selection-and-tuning) ·
 [原 JVM 题库](/fundamentals/基础模块2-JVM基础-标准答案库)

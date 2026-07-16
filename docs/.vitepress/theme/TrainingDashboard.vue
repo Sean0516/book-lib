@@ -92,6 +92,16 @@ onBeforeUnmount(() => window.removeEventListener('learning-records-changed', loa
       <div><span>{{ stats.bookmarked }}</span><small>已收藏</small></div>
     </section>
 
+    <section class="training-section workbench-entry">
+      <div class="training-section__head"><span>00</span><div><h2>架构师实战工作台</h2><p>从真实项目证据，到未知系统设计，再到领导力答辩。</p></div></div>
+      <div class="workbench-entry-grid">
+        <a :href="withBase('/training/project-defense')"><span>01 · PROJECT</span><strong>项目答辩</strong><small>证据卡 · 三级追问 · 个人贡献</small><i>↗</i></a>
+        <a :href="withBase('/training/system-design')"><span>02 · SYSTEM</span><strong>未知系统设计</strong><small>主动澄清 · 故障注入 · 架构取舍</small><i>↗</i></a>
+        <a :href="withBase('/training/leadership')"><span>03 · LEADERSHIP</span><strong>领导力面试</strong><small>真实冲突 · 影响过程 · 结果证据</small><i>↗</i></a>
+        <a :href="withBase('/training/history')"><span>04 · REPORT</span><strong>能力报告</strong><small>五维评分 · 薄弱模式 · 本地备份</small><i>↗</i></a>
+      </div>
+    </section>
+
     <section class="training-section role-route">
       <div class="training-section__head"><span>01</span><div><h2>岗位路线</h2><p>先建立主干，再用案例补深度。</p></div></div>
       <div class="role-switch">
